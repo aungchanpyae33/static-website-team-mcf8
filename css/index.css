@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+a {
+  color: inherit; /* Use parent text color */
+  text-decoration: none; /* Remove underline */
+}
+
+body {
+  font-family: "Noto Sans Myanmar", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+/* .overlay {
+  position: fixed;
+  inset: 0;
+  opacity: ;
+  background: rgba(0, 0, 0, 0.2);
+} */
+li {
+  list-style: none;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 70px;
+}
+.navTopBar {
+  background-color: #2d81c2;
+  display: flex;
+  height: 70px;
+  align-items: center;
+}
+
+.iconLink {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.navLinkContainer {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+}
+.navLinkContainer ul {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  gap: 0.2rem;
+}
+
+.navLinkContainer ul li {
+  padding: 0.5rem;
+  display: flex;
+
+  background-color: white;
+  border-radius: 5px;
+  align-items: center;
+  border: 1px solid black;
+  list-style: none;
+}
+
+.navLinkContainer ul .toggleMenuIcon {
+  display: none;
+}
+
+.dropdownContainer {
+  position: absolute;
+  top: 0;
+  height: 200px;
+  width: 100%;
+  z-index: -10;
+  transform: translateY(-130px);
+  display: flex;
+  transition: transform 200ms ease-in-out;
+}
+.drop-show {
+  transform: translateY(70px);
+}
+
+.dropdownContainer ul {
+  isolation: isolate;
+  color: white;
+  display: flex;
+  flex: 1;
+  background: #2d81c2;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dropdownContainer ul li:hover {
+  text-decoration: underline;
+}
+
+.banner-image {
+  display: flex;
+  overflow: hidden;
+
+  justify-content: center;
+  align-items: center;
+}
+.banner-image img {
+  background-position: center;
+}
+
+/* main */
+
+/* main banner */
+main section {
+  margin-bottom: 1.5rem;
+}
+
+.topBannerText {
+  text-align: center;
+  width: 90%;
+  margin: 2rem auto;
+}
+.topBannerText h1 {
+  display: inline;
+  /* font-size: 2.5rem; */
+  margin-bottom: 1rem;
+}
+
+/* main about */
+.card-about {
+  width: 90%;
+  margin: 1rem auto auto auto;
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1rem;
+}
+.card-about > div {
+  padding: 10px;
+  max-width: 500px;
+  flex: 1;
+  border-radius: 5px;
+  border: 2px solid #2d81c2;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
+.card-text {
+  font-size: large;
+}
+.card-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* team member */
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* center items in each row */
+  gap: 16px;
+  padding: 16px;
+}
+
+.grid-item {
+  background: #2d81c2;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  transition: scale 200ms;
+}
+
+.grid-item:hover {
+  scale: 1.1;
+}
+
+footer {
+  text-align: center;
+  margin: 2rem auto 0.5rem auto;
+  color: #67696b; /* muted text color */
+}
+
+/* responsive */
+
+@media (max-width: 768px) {
+  .navLinkContainer ul .toggleMenuIcon {
+    display: flex;
+    align-items: center;
+  }
+  .navLinkContainer ul li {
+    display: none;
+  }
+  .navLinkContainer ul {
+    flex: 1;
+    justify-content: flex-end;
+    margin: auto 0.5rem auto 0.5rem;
+  }
+  .banner-image img {
+    min-width: 580px;
+    object-fit: contain;
+    height: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .banner-image img {
+    min-width: 580px;
+    object-fit: contain;
+    height: auto;
+  }
+  .card-about {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .card-about > div {
+    width: 90%;
+  }
+
+  .card-about > div > img {
+    max-width: 350px;
+    object-fit: contain;
+    object-position: center;
+    height: auto;
+  }
+  .card-text {
+    font-size: medium;
+  }
+}
