@@ -38,6 +38,7 @@ header {
   display: flex;
   height: 70px;
   align-items: center;
+  border-bottom: 1px solid rgb(49, 48, 48);
 }
 
 .iconLink {
@@ -81,6 +82,7 @@ header {
   z-index: -10;
   transform: translateY(-130px);
   display: flex;
+  border-bottom: 1px solid rgb(49, 48, 48);
   transition: transform 200ms ease-in-out;
 }
 .drop-show {
