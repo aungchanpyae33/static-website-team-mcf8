@@ -34,7 +34,7 @@ header {
   height: 70px;
 }
 .navTopBar {
-  background-color: red;
+  background-color: #2d81c2;
   display: flex;
   height: 70px;
   align-items: center;
